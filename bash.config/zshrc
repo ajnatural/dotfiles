@@ -1,0 +1,56 @@
+BASE_DIR=$(dirname $(readlink -f $0))
+
+ZSH=$BASE_DIR/oh-my-zsh
+ZSH_THEME="candy"
+
+export UPDATE_ZSH_DAYS=5
+
+# Uncomment following line if you want to disable command autocorrection
+# DISABLE_CORRECTION="true"
+
+# Uncomment following line if you want red dots to be displayed while waiting for completion
+COMPLETION_WAITING_DOTS="true"
+
+# Uncomment following line if you want to disable marking untracked files under
+# VCS as dirty. This makes repository status check for large repositories much,
+# much faster.
+export DISABLE_UNTRACKED_FILES_DIRTY="true"
+
+# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
+# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
+# Example format: plugins=(rails git textmate ruby lighthouse)
+plugins=(gitfast zsh_reload)
+
+source $ZSH/oh-my-zsh.sh
+
+# Lines configured by zsh-newuser-install
+HISTFILE=$HOME/.histfile
+HISTSIZE=1500
+SAVEHIST=1500
+setopt appendhistory beep nomatch notify
+unsetopt autocd extendedglob
+# End of lines configured by zsh-newuser-install
+
+# The following lines were added by compinstall
+zstyle :compinstall filename "$HOME.zshrc"
+autoload -Uz compinit
+compinit
+# End of lines added by compinstall
+
+if [[ -x /usr/bin/ag ]]; then
+  export FZF_DEFAULT_COMMAND='ag -g ""'
+  export FZF_CTRL_T_COMMAND=$FZF_DEFAULT_COMMAND
+fi
+
+
+
+plugins=(git colored-man colorize github jira vagrant virtualenv pip python brew osx zsh-syntax-highlighting)
+
+source ~/Projects/config/env.sh
+
+export NVM_DIR="$HOME/.nvm"
+  . "/usr/local/opt/nvm/nvm.sh"
+
+export PATH="/Users/anshuljain/Tools/arcanist/bin:$PATH"
+
+

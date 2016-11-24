@@ -1,0 +1,30 @@
+#!/bin/bash
+SOURCE="${BASH_SOURCE[0]}"
+while [ -h "$SOURCE" ]; do
+    DIR="$( cd -P "$( dirname "$SOURCE" )" && pwd )"
+    SOURCE="$(readlink "$SOURCE")"
+    [[ $SOURCE != /* ]] && SOURCE="$DIR/$SOURCE"
+done
+BASE_DIR="$( cd -P "$( dirname "$SOURCE" )" && pwd )"
+echo $BASE_DIR
+
+# sudo apt-get install -y cmake exuberant-ctags vim tmux zsh silversearcher-ag
+
+# sudo chsh -s /bin/zsh $USER
+
+git clone https://github.com/robbyrussell/oh-my-zsh.git     $BASE_DIR/bash.config/oh-my-zsh
+git clone https://github.com/junegunn/fzf.git               $BASE_DIR/bash.config/fzf
+git clone https://github.com/gmarik/Vundle.vim.git          $BASE_DIR/vim.config/vim/bundle/Vundle.vim
+
+echo "source $BASE_DIR/bash.config/main.sh" >> ~/.zshrc
+echo "source $BASE_DIR/vim.config/vimrc" >> ~/.vimrc
+echo "export FZF_TMUX=0" >> ~./zshrc
+
+zsh $BASE_DIR/bash.config/fzf/install
+
+ln -s $BASE_DIR/vim.config/vim ~/.vim
+ln -s $BASE_DIR/tmux.config/tmux.conf ~/.tmux.conf
+
+vim +PluginInstall +qall
+
+cd $BASE_DIR
