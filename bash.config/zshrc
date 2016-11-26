@@ -42,15 +42,4 @@ if [[ -x /usr/bin/ag ]]; then
   export FZF_CTRL_T_COMMAND=$FZF_DEFAULT_COMMAND
 fi
 
-
-
 plugins=(git colored-man colorize github jira vagrant virtualenv pip python brew osx zsh-syntax-highlighting)
-
-source ~/Projects/config/env.sh
-
-export NVM_DIR="$HOME/.nvm"
-  . "/usr/local/opt/nvm/nvm.sh"
-
-export PATH="/Users/anshuljain/Tools/arcanist/bin:$PATH"
-
-

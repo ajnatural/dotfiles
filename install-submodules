@@ -16,14 +16,14 @@ git clone https://github.com/robbyrussell/oh-my-zsh.git     $BASE_DIR/bash.confi
 git clone https://github.com/junegunn/fzf.git               $BASE_DIR/bash.config/fzf
 git clone https://github.com/gmarik/Vundle.vim.git          $BASE_DIR/vim.config/vim/bundle/Vundle.vim
 
-echo "source $BASE_DIR/bash.config/main.sh" >> ~/.zshrc
-echo "source $BASE_DIR/vim.config/vimrc" >> ~/.vimrc
-echo "export FZF_TMUX=0" >> ~./zshrc
+echo "source $BASE_DIR/bash.config/main.sh" >> $HOME/.zshrc
+echo "source $BASE_DIR/vim.config/vimrc" >> $HOME/.vimrc
+echo "export FZF_TMUX=0" >> $HOME/.zshrc
 
 zsh $BASE_DIR/bash.config/fzf/install
 
-ln -s $BASE_DIR/vim.config/vim ~/.vim
-ln -s $BASE_DIR/tmux.config/tmux.conf ~/.tmux.conf
+ln -s $BASE_DIR/vim.config/vim $HOME/.vim
+ln -s $BASE_DIR/tmux.config/tmux.conf $HOME/.tmux.conf
 
 vim +PluginInstall +qall
 
