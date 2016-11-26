@@ -23,8 +23,6 @@ inoremap <C-l> <Right>
 inoremap <C-Space> <C-x><C-o>
 vnoremap <silent> J :m '>+1<CR>gv=gv
 vnoremap <silent> K :m '<-2<CR>gv=gv
-vnoremap y y :call system('xclip -sel clip -i', @0)<CR>
-noremap yy yy :call system('xclip -sel clip -i', @0)<CR>
 noremap <silent> <F4> :TagbarToggle<CR>
 
 nnoremap <c-]> :CtrlPtjump<cr>

@@ -1,7 +1,6 @@
 set nocompatible
 let g:VIMRC_BASE_URL = resolve(expand('<sfile>:p:h'))
 
-exec 'source ' . g:VIMRC_BASE_URL . '/util.vim'
 exec 'source ' . g:VIMRC_BASE_URL . '/vundlerc.vim'
 exec 'source ' . g:VIMRC_BASE_URL . '/mappings.vim'
 exec 'source ' . g:VIMRC_BASE_URL . '/gvimrc.vim'

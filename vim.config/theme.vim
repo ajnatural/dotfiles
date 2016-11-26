@@ -2,7 +2,7 @@
 set term=xterm-256color     " [ builtin_xterm | xterm-256color ]
 set nocursorcolumn
 set nocursorline
-colorscheme molokai
+colorscheme default
 syntax enable
 hi normal       ctermbg=none
 hi Pmenu        ctermbg=black       ctermfg=white
