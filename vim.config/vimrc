@@ -5,13 +5,6 @@ exec 'source ' . g:VIMRC_BASE_URL . '/vundlerc.vim'
 exec 'source ' . g:VIMRC_BASE_URL . '/mappings.vim'
 exec 'source ' . g:VIMRC_BASE_URL . '/gvimrc.vim'
 
-" ======= Code Folding =======
-set foldmarker={,}
-set foldmethod=marker
-set foldcolumn=5
-let php_sql_query       =1
-let php_htmlInStrings   =1
-
 set expandtab
 set shiftwidth=4
 set tabstop=4
@@ -31,8 +24,6 @@ au filetype javascript,js   call JsSettings()
 au filetype python          setlocal omnifunc=pythoncomplete#Complete
 au filetype php             setlocal omnifunc=phpcomplete#CompletePHP
 au filetype xml             setlocal omnifunc=xmlcomplete#CompleteTags
-au filetype python          set foldmethod=indent
-au InsertEnter *            if !exists('w:last_fdm') | let w:last_fdm=&foldmethod | setlocal foldmethod=manual | endif
 
 augroup qf
     autocmd!
