@@ -71,6 +71,10 @@ PACKAGES=(
     zsh
     zsh-completions
     sbdchd/skim/skim
+    pgcli
+    mycli
+    mysql
+    psql
 )
 
 echo "Installing packages..."

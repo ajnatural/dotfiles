@@ -1,8 +1,4 @@
 vim.config/vim/bundle/*
-vim.config/vim/sessions/*
-vim.config/vim/.netrwhist
-
-bash.config/selecta
 bash.config/oh-my-zsh
-bash.config/fzf
-bin
+freelancer.config/*
+vim.config/plugin/*
