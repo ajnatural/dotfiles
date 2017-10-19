@@ -97,6 +97,7 @@ CASKS=(
     vlc
     tunnelblick
     macvim --with-override-system-vim
+    dashlane
 )
 
 echo "Installing cask apps..."
