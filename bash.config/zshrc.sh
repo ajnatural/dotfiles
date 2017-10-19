@@ -3,6 +3,7 @@ BASE_DIR=$(dirname $(readlink -f $0))
 ZSH=$BASE_DIR/oh-my-zsh
 ZSH_THEME="candy"
 
+DISABLE_UPDATE_PROMPT=true
 export UPDATE_ZSH_DAYS=5
 
 # Uncomment following line if you want to disable command autocorrection
@@ -16,17 +17,19 @@ COMPLETION_WAITING_DOTS="true"
 # much faster.
 export DISABLE_UNTRACKED_FILES_DIRTY="true"
 
+export EDITOR=vim
+
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(gitfast zsh_reload)
+plugins=(jsontools globalias extract npm osx pip python sudo web-search wd virtualenvwrapper yarn gitfast colored-man-pages dotenv urltools rsync)
 
 source $ZSH/oh-my-zsh.sh
 
 # Lines configured by zsh-newuser-install
 HISTFILE=$HOME/.histfile
-HISTSIZE=1500
-SAVEHIST=1500
+HISTSIZE=5000
+SAVEHIST=5000
 setopt appendhistory beep nomatch notify
 unsetopt autocd extendedglob
 # End of lines configured by zsh-newuser-install
@@ -36,10 +39,3 @@ zstyle :compinstall filename "$HOME.zshrc"
 autoload -Uz compinit
 compinit
 # End of lines added by compinstall
-
-if [[ -x /usr/bin/ag ]]; then
-  export FZF_DEFAULT_COMMAND='ag -g ""'
-  export FZF_CTRL_T_COMMAND=$FZF_DEFAULT_COMMAND
-fi
-
-plugins=(git colored-man colorize github jira vagrant virtualenv pip python brew osx zsh-syntax-highlighting)

@@ -8,19 +8,14 @@ done
 BASE_DIR="$( cd -P "$( dirname "$SOURCE" )" && pwd )"
 echo $BASE_DIR
 
-# sudo apt-get install -y cmake exuberant-ctags vim tmux zsh silversearcher-ag
-
-# sudo chsh -s /bin/zsh $USER
-
-git clone https://github.com/robbyrussell/oh-my-zsh.git     $BASE_DIR/bash.config/oh-my-zsh
-git clone https://github.com/junegunn/fzf.git               $BASE_DIR/bash.config/fzf
+# Install oh-my-zsh
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 git clone https://github.com/gmarik/Vundle.vim.git          $BASE_DIR/vim.config/vim/bundle/Vundle.vim
+sh ./osx.config/brew.sh
+sh ./osx.config/osx.sh
 
 echo "source $BASE_DIR/bash.config/main.sh" >> $HOME/.zshrc
 echo "source $BASE_DIR/vim.config/vimrc" >> $HOME/.vimrc
-echo "export FZF_TMUX=0" >> $HOME/.zshrc
-
-zsh $BASE_DIR/bash.config/fzf/install
 
 ln -s $BASE_DIR/vim.config/vim $HOME/.vim
 ln -s $BASE_DIR/tmux.config/tmux.conf $HOME/.tmux.conf

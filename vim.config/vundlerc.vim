@@ -29,6 +29,7 @@ Plugin 'https://github.com/xolox/vim-misc.git'
 Plugin 'https://github.com/xolox/vim-notes.git'
 Plugin 'https://github.com/tpope/vim-dispatch.git'
 Plugin 'https://github.com/vim-scripts/EasyGrep.git'
+Plugin 'https://github.com/chaoren/vim-wordmotion.git'
 
 " Extra File Type Support
 Plugin 'https://github.com/elzr/vim-json.git'
@@ -36,5 +37,7 @@ Plugin 'https://github.com/vobornik/vim-mql4.git'
 Plugin 'https://github.com/solarnz/thrift.vim'
 
 Plugin 'https://github.com/isRuslan/vim-es6.git'
+
+Plugin 'https://github.com/leafgarland/typescript-vim.git'
 
 call vundle#end()

@@ -1,6 +1,7 @@
 set nocompatible
 let g:VIMRC_BASE_URL = resolve(expand('<sfile>:p:h'))
 
+exec 'source ' . g:VIMRC_BASE_URL . '/util.vim'
 exec 'source ' . g:VIMRC_BASE_URL . '/vundlerc.vim'
 exec 'source ' . g:VIMRC_BASE_URL . '/mappings.vim'
 exec 'source ' . g:VIMRC_BASE_URL . '/gvimrc.vim'
@@ -9,7 +10,13 @@ set expandtab
 set shiftwidth=4
 set tabstop=4
 
+set foldenable
+set foldmethod=indent
+
 set autoread
+
+set hidden
+nnoremap <Tab> <C-^><CR>
 
 filetype plugin indent on
 au BufNewFile,BufRead *.tpl,*.smarty,*.volt set filetype=html
@@ -30,7 +37,7 @@ augroup qf
     autocmd FileType qf set nobuflisted
 augroup end
 
-set rtp+=~/configurations/bash.config/fzf
+set rtp+=~/.skim
 
 exec 'source ' . g:VIMRC_BASE_URL . '/plugin/tagbar.vim'
 exec 'source ' . g:VIMRC_BASE_URL . '/plugin/neo.vim'
