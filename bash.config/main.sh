@@ -1,7 +1,7 @@
-BASE_DIR=$(dirname $(readlink -f $0))
+BASE_DIR='/Users/ajain/dotfiles/bash.config'
 
 alias=$BASE_DIR/alias.sh
-zshrc=$BASE_DIR/zshrc
+zshrc=$BASE_DIR/zshrc.sh
 
 # Customize to your needs...
 if [[ -e $alias ]]; then

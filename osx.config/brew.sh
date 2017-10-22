@@ -8,9 +8,7 @@
 # include:
 #
 # - Twitter (app store)
-# - Postgres.app (http://postgresapp.com/)
-#
-# Notes:
+# - Postgres.app (http://postgresapp.com/) # # Notes:
 #
 # - If installing full Xcode, it's better to install that first from the app
 #   store before running the bootstrap script. Otherwise, Homebrew can't access
@@ -35,21 +33,16 @@ fi
 brew update
 
 # Install GNU core utilities (those that come with OS X are outdated)
-brew tap homebrew/dupes
-brew install coreutils
-brew install gnu-sed --with-default-names
-brew install gnu-tar --with-default-names
-brew install gnu-indent --with-default-names
-brew install gnu-which --with-default-names
-brew install gnu-grep --with-default-names
-
-# Install GNU `find`, `locate`, `updatedb`, and `xargs`, g-prefixed
-brew install findutils
-
-# Install Bash 4
-brew install bash
+brew tap homebrew/core
 
 PACKAGES=(
+    coreutils
+    gnu-sed
+    gnu-tar
+    gnu-indent
+    gnu-which
+    findutils
+    bash
     ack
     git
     imagemagick
@@ -57,15 +50,13 @@ PACKAGES=(
     mercurial
     python
     python3
-    the_silver_searcher
+    ripgrep
     tmux
     tree
     vim
     wget
-    ngrok
     nvm
     rsync
-    rvm
     watch
     watchman
     zsh
@@ -74,7 +65,7 @@ PACKAGES=(
     pgcli
     mycli
     mysql
-    psql
+    postgres
 )
 
 echo "Installing packages..."
@@ -82,9 +73,6 @@ brew install ${PACKAGES[@]}
 
 echo "Cleaning up..."
 brew cleanup
-
-echo "Installing cask..."
-brew install caskroom/cask/brew-cask
 
 CASKS=(
     firefox
@@ -96,8 +84,10 @@ CASKS=(
     spectacle
     vlc
     tunnelblick
-    macvim --with-override-system-vim
+    macvim
     dashlane
+    ngrok
+    alfred
 )
 
 echo "Installing cask apps..."
@@ -106,7 +96,6 @@ brew cask install ${CASKS[@]}
 echo "Installing fonts..."
 brew tap caskroom/fonts
 FONTS=(
-    font-inconsolidata
     font-roboto
     font-clear-sans
 )
@@ -114,18 +103,18 @@ brew cask install ${FONTS[@]}
 
 echo "Installing Python packages..."
 PYTHON_PACKAGES=(
-    ipython
     virtualenv
     virtualenvwrapper
 )
-sudo pip install ${PYTHON_PACKAGES[@]}
+
+sudo chown -R $(whoami) /Users/ajain/Library/
+
+sudo -H easy_install pip
+sudo -H pip install ${PYTHON_PACKAGES[@]} --ignore-installed six
 
 echo "Installing Ruby gems"
 RUBY_GEMS=(
 )
 # sudo gem install ${RUBY_GEMS[@]}
-
-echo "Installing global npm packages..."
-npm install marked -g
 
 echo "Bootstrapping complete"

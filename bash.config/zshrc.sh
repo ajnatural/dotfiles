@@ -49,7 +49,7 @@ HIST_STAMPS="dd/mm/yyyy"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-BASE_DIR=$(dirname $(readlink -f $0))
+BASE_DIR='/Users/ajain/'
 
 export EDITOR=vim
 

@@ -1,25 +1,24 @@
 #!/bin/bash
-SOURCE="${BASH_SOURCE[0]}"
-while [ -h "$SOURCE" ]; do
-    DIR="$( cd -P "$( dirname "$SOURCE" )" && pwd )"
-    SOURCE="$(readlink "$SOURCE")"
-    [[ $SOURCE != /* ]] && SOURCE="$DIR/$SOURCE"
-done
-BASE_DIR="$( cd -P "$( dirname "$SOURCE" )" && pwd )"
-echo $BASE_DIR
+BASE_DIR="/Users/ajain"
+
+echo "Base DIR: $BASE_DIR"
 
 # Install oh-my-zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+
 git clone https://github.com/gmarik/Vundle.vim.git          $BASE_DIR/vim.config/vim/bundle/Vundle.vim
+
 sh ./osx.config/brew.sh
 sh ./osx.config/osx.sh
-
-echo "source $BASE_DIR/bash.config/main.sh" >> $HOME/.zshrc
-echo "source $BASE_DIR/vim.config/vimrc" >> $HOME/.vimrc
 
 ln -s $BASE_DIR/vim.config/vim $HOME/.vim
 ln -s $BASE_DIR/tmux.config/tmux.conf $HOME/.tmux.conf
 
 vim +PluginInstall +qall
 
+for file in freelancer.config/*; do cp -r $file $BASE_DIR/.$(basename $file); done;
+
 cd $BASE_DIR
+
+echo "Put 'source $BASE_DIR/bash.config/main.sh' in .zshrc"
+echo "Put 'source $BASE_DIR/vim.config/vimrc' in .vimrc"
