@@ -1,4 +1,5 @@
 vim.config/vim/bundle/*
 bash.config/oh-my-zsh
-freelancer.config/*
+freelancer.local/*
 vim.config/plugin/*
+.DS_Store

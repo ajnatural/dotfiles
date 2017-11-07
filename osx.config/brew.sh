@@ -23,6 +23,8 @@
 
 echo "Starting bootstrapping"
 
+xcode-select --install
+
 # Check for Homebrew, install if we don't have it
 if test ! $(which brew); then
     echo "Installing homebrew..."
@@ -34,6 +36,7 @@ brew update
 
 # Install GNU core utilities (those that come with OS X are outdated)
 brew tap homebrew/core
+brew tap homebrew/homebrew-php
 
 PACKAGES=(
     coreutils
@@ -41,6 +44,7 @@ PACKAGES=(
     gnu-tar
     gnu-indent
     gnu-which
+    gcc@5
     findutils
     bash
     ack
@@ -53,7 +57,6 @@ PACKAGES=(
     ripgrep
     tmux
     tree
-    vim
     wget
     nvm
     rsync
@@ -61,18 +64,26 @@ PACKAGES=(
     watchman
     zsh
     zsh-completions
-    sbdchd/skim/skim
+    fzf
     pgcli
     mycli
     mysql
     postgres
+    neovim
 )
 
 echo "Installing packages..."
 brew install ${PACKAGES[@]}
 
+brew install yarn --without-node
+brew install php71
+brew install composer
+
 echo "Cleaning up..."
 brew cleanup
+
+# fzf keybindings
+$(brew --prefix)/opt/fzf/install
 
 CASKS=(
     firefox
@@ -80,11 +91,9 @@ CASKS=(
     google-chrome
     gpgtools
     iterm2
-    macvim
     spectacle
     vlc
     tunnelblick
-    macvim
     dashlane
     ngrok
     alfred
@@ -101,8 +110,8 @@ FONTS=(
 )
 brew cask install ${FONTS[@]}
 
-echo "Installing Python packages..."
-PYTHON_PACKAGES=(
+echo "Installing Python2 packages..."
+PYTHON2_PACKAGES=(
     virtualenv
     virtualenvwrapper
 )
@@ -110,7 +119,14 @@ PYTHON_PACKAGES=(
 sudo chown -R $(whoami) /Users/ajain/Library/
 
 sudo -H easy_install pip
-sudo -H pip install ${PYTHON_PACKAGES[@]} --ignore-installed six
+sudo -H pip install ${PYTHON2_PACKAGES[@]} --ignore-installed six
+
+echo "Installing Python3 packages..."
+PYTHON3_PACKAGES=(
+    virtualenv
+)
+
+sudo -H pip3 install ${PYTHON3_PACKAGES[@]}
 
 echo "Installing Ruby gems"
 RUBY_GEMS=(

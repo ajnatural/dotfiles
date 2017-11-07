@@ -1,5 +1,5 @@
 #!/bin/bash
-BASE_DIR="/Users/ajain"
+BASE_DIR=$HOME
 
 echo "Base DIR: $BASE_DIR"
 
@@ -14,11 +14,15 @@ sh ./osx.config/osx.sh
 ln -s $BASE_DIR/vim.config/vim $HOME/.vim
 ln -s $BASE_DIR/tmux.config/tmux.conf $HOME/.tmux.conf
 
-vim +PluginInstall +qall
-
-for file in freelancer.config/*; do cp -r $file $BASE_DIR/.$(basename $file); done;
+# Install neovim config
+git clone https://github.com/rafi/vim-config.git ./neovim.config
+mkdir $BASE_DIR/.config
+ln -s $BASE_DIR/dotfiles/neovim.config $BASE_DIR/.config/nvim
+ln -s $BASE_DIR/dotfiles/neovim.config $BASE_DIR/.vim 
+pip2 install -U neovim PyYAML
+pip3 install -U neovim PyYAML
+cd ./neovim.config && make
 
 cd $BASE_DIR
 
 echo "Put 'source $BASE_DIR/bash.config/main.sh' in .zshrc"
-echo "Put 'source $BASE_DIR/vim.config/vimrc' in .vimrc"

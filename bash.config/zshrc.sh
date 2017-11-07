@@ -5,7 +5,7 @@ export ZSH=~/.oh-my-zsh
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="random"
+ZSH_THEME="arrow"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -51,12 +51,12 @@ HIST_STAMPS="dd/mm/yyyy"
 # Add wisely, as too many plugins slow down shell startup.
 BASE_DIR='/Users/ajain/'
 
-export EDITOR=vim
+export EDITOR=nvim
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(jsontools globalias extract npm osx pip python sudo web-search wd virtualenvwrapper yarn gitfast colored-man-pages dotenv urltools rsync)
+plugins=(jsontools extract npm osx pip python sudo wd virtualenvwrapper yarn gitfast colored-man-pages dotenv urltools rsync)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -73,3 +73,11 @@ zstyle :compinstall filename "$HOME.zshrc"
 autoload -Uz compinit
 compinit
 # End of lines added by compinstall
+
+export PATH=/usr/local/Cellar/php71/7.1.10_21/bin:$PATH
+alias python=python2
+
+export NVM_DIR="$HOME/.nvm"
+. "/usr/local/opt/nvm/nvm.sh"
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
