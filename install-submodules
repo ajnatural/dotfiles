@@ -6,16 +6,17 @@ echo "Base DIR: $BASE_DIR"
 # Install oh-my-zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
-git clone https://github.com/gmarik/Vundle.vim.git          $BASE_DIR/vim.config/vim/bundle/Vundle.vim
-
 sh ./osx.config/brew.sh
 sh ./osx.config/osx.sh
 
 ln -s $BASE_DIR/vim.config/vim $HOME/.vim
 ln -s $BASE_DIR/tmux.config/tmux.conf $HOME/.tmux.conf
 
+# Remove default VS Code config, and symlink our one
+rm -rf $BASE_DIR//Library/Application\ Support/Code/User
+ln -s $BASE_DIR/dotfiles/vscode.config/User $BASE_DIR//Library/Application\ Support/Code/User
+
 # Install neovim config
-git clone https://github.com/rafi/vim-config.git ./neovim.config
 mkdir $BASE_DIR/.config
 ln -s $BASE_DIR/dotfiles/neovim.config $BASE_DIR/.config/nvim
 ln -s $BASE_DIR/dotfiles/neovim.config $BASE_DIR/.vim 

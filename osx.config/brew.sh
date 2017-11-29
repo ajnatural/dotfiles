@@ -97,6 +97,7 @@ CASKS=(
     dashlane
     ngrok
     alfred
+    visual-studio-code
 )
 
 echo "Installing cask apps..."
@@ -114,6 +115,7 @@ echo "Installing Python2 packages..."
 PYTHON2_PACKAGES=(
     virtualenv
     virtualenvwrapper
+    flake8
 )
 
 sudo chown -R $(whoami) /Users/ajain/Library/
@@ -124,6 +126,7 @@ sudo -H pip install ${PYTHON2_PACKAGES[@]} --ignore-installed six
 echo "Installing Python3 packages..."
 PYTHON3_PACKAGES=(
     virtualenv
+    flake8
 )
 
 sudo -H pip3 install ${PYTHON3_PACKAGES[@]}
