@@ -54,21 +54,21 @@
 	<key>NSWindow Frame NSFontPanel</key>
 	<string>527 208 551 217 0 0 1680 1027 </string>
 	<key>NSWindow Frame SUUpdateAlert</key>
-	<string>532 476 620 392 0 0 1680 1027 </string>
+	<string>-1030 941 620 392 -1440 -667 1440 2537 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>-2461 290 918 381 -2880 -667 1440 2537 </string>
+	<string>-1021 251 937 512 -1440 -667 1440 2537 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>-1440 1021 1436 843 -1440 -667 1440 2537 </string>
+	<string>0 23 1440 1004 0 0 1680 1027 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
-	<string>4 0 1676 1027 0 0 1680 1027 </string>
+	<string>-2880 -644 1440 2514 -2880 -667 1440 2537 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
-	<string>-2876 -638 1436 1234 -2880 -667 1440 2537 </string>
+	<string>-1440 602 1440 1268 -1440 -667 1440 2537 </string>
 	<key>NSWindow Frame iTerm Window 3</key>
-	<string>-2876 -667 1436 1268 -2880 -667 1440 2537 </string>
+	<string>-1440 -667 1440 1268 -1440 -667 1440 2537 </string>
 	<key>NSWindow Frame iTerm Window 4</key>
-	<string>-2876 -667 1436 1268 -2880 -667 1440 2537 </string>
+	<string>-2880 -667 1440 1268 -2880 -667 1440 2537 </string>
 	<key>NSWindow Frame iTerm Window 5</key>
-	<string>-2876 -667 1436 2537 -2880 -667 1440 2537 </string>
+	<string>-1440 -667 1440 1268 -1440 -667 1440 2537 </string>
 	<key>New Bookmarks</key>
 	<array>
 		<dict>
@@ -649,7 +649,7 @@
 			<key>Screen</key>
 			<integer>-1</integer>
 			<key>Scrollback Lines</key>
-			<integer>1000</integer>
+			<integer>50000</integer>
 			<key>Selected Text Color</key>
 			<dict>
 				<key>Blue Component</key>
@@ -702,6 +702,8 @@
 			<string>/Users/ajain</string>
 		</dict>
 	</array>
+	<key>NoSyncHaveUsedCopyMode</key>
+	<true/>
 	<key>NoSyncHaveWarnedAboutPasteConfirmationChange</key>
 	<true/>
 	<key>NoSyncInstallationId</key>
@@ -756,9 +758,11 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2017-11-09T01:26:02Z</date>
+	<date>2017-11-29T00:11:28Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
+	<key>SUSkippedVersion</key>
+	<string>3.1.5</string>
 	<key>findMode_iTerm</key>
 	<integer>0</integer>
 	<key>iTerm Version</key>
