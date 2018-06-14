@@ -20,9 +20,6 @@ ln -s $BASE_DIR/dotfiles/vscode.config/User $BASE_DIR//Library/Application\ Supp
 mkdir $BASE_DIR/.config
 ln -s $BASE_DIR/dotfiles/nvim.config $BASE_DIR/.config/nvim
 ln -s $BASE_DIR/dotfiles/nvim.config $BASE_DIR/.vim 
-pip2 install -U neovim PyYAML
-pip3 install -U neovim PyYAML
-cd ./nvim.config && make
 
 cd $BASE_DIR
 

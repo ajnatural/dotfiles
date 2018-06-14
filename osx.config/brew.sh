@@ -70,6 +70,8 @@ PACKAGES=(
     mysql
     postgres
     neovim
+		# fln specific
+		lsyncd
 )
 
 echo "Installing packages..."
@@ -89,7 +91,6 @@ CASKS=(
     firefox
     flux
     google-chrome
-    gpgtools
     iterm2
     spectacle
     vlc
@@ -97,7 +98,8 @@ CASKS=(
     dashlane
     ngrok
     alfred
-    visual-studio-code
+    java
+    onivim
 )
 
 echo "Installing cask apps..."

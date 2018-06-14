@@ -2,7 +2,7 @@ alias httpserver='python -m SimpleHTTPServer'
 alias gl='git log --graph --pretty=format:'\''%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'\'' --abbrev-commit --all'
 alias v='nvim `fzf`'
 alias vim='nvim'
-alias vi='nvim'
+alias vi='vim'
 
 alias gfh='git-file-history'
 git-file-history() {
