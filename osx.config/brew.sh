@@ -53,7 +53,7 @@ PACKAGES=(
     jq
     mercurial
     python
-    python3
+    python2
     ripgrep
     tmux
     tree
@@ -99,7 +99,6 @@ CASKS=(
     ngrok
     alfred
     java
-    onivim
 )
 
 echo "Installing cask apps..."

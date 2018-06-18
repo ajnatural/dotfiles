@@ -118,6 +118,7 @@ set matchtime=1     " Tenths of a second to show the matching paren
 set cpoptions-=m    " showmatch will wait 0.5s or until a char is typed
 
 " }}}
+"
 " Behavior {{{
 " --------
 set nowrap                      " No wrap by default
@@ -233,5 +234,7 @@ function! FoldText()
 endfunction
 
 " }}}
+
+let g:fzf_layout = { 'window': '-tabnew' }
 
 " vim: set foldmethod=marker ts=2 sw=2 tw=80 noet :

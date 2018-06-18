@@ -1,5 +1,6 @@
 vim.config/vim/bundle/*
 bash.config/oh-my-zsh
 freelancer.local/*
-vim.config/plugin/*
+nvim.config/plugged/*
 .DS_Store
+.netrwhist

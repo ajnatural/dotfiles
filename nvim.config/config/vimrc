@@ -1,18 +1,51 @@
-"      .-.     .-.     .-.     .-.     .-.     .-.     .-.
-" `._.'   `._.'   `._.'   `._.'   `._.'   `._.'   `._.'
-"
-" https://github.com/rafi/vim-config
-
-" Runtime and Plugins
-" -------------------------------------------------
+" Global Mappings "{{{
+" " Use spacebar as leader and ; as secondary-leader
+let g:mapleader="\<Space>"
+let g:maplocalleader=';'
 
 if &compatible
 	set nocompatible
 endif
 
+syntax on
+
+" Set main configuration directory, and where cache is stored.
+let $VIMPATH = fnamemodify(resolve(expand('<sfile>:p')), ':h:h')
+
+function! s:source_file(path, ...) abort
+	let use_global = get(a:000, 0, ! has('vim_starting'))
+	let abspath = resolve(expand($VIMPATH.'/config/'.a:path))
+	if ! use_global
+		execute 'source' fnameescape(abspath)
+		return
+	endif
+
+	let content = map(readfile(abspath),
+		\ "substitute(v:val, '^\\W*\\zsset\\ze\\W', 'setglobal', '')")
+	let tempfile = tempname()
+	try
+		call writefile(content, tempfile)
+		execute printf('source %s', fnameescape(tempfile))
+	finally
+		if filereadable(tempfile)
+			call delete(tempfile)
+		endif
+	endtry
+endfunction
+
+" Set augroup
+augroup MyAutoCmd
+	autocmd!
+	autocmd CursorHold *? syntax sync minlines=300
+augroup END
+
 " Loading configuration modules
 call s:source_file('general.vim')
 call s:source_file('filetype.vim')
 call s:source_file('mappings.vim')
-call s:source_file('theme.vim')
+call s:source_file('fzf.vim')
+call s:source_file('plug.vim')
+call s:source_file('plugins.vim')
+call s:source_file('syntastic.vim')
+
 set secure
