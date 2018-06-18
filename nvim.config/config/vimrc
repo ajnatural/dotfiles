@@ -9,6 +9,11 @@ endif
 
 syntax on
 
+" deoplete
+let g:deoplete#enable_at_startup = 1
+let g:deoplete#ignore_sources = get(g:, 'deoplete#ignore_sources', {})
+let g:deoplete#ignore_sources.php = ['omni']
+
 " Set main configuration directory, and where cache is stored.
 let $VIMPATH = fnamemodify(resolve(expand('<sfile>:p')), ':h:h')
 

@@ -78,7 +78,7 @@ echo "Installing packages..."
 brew install ${PACKAGES[@]}
 
 brew install yarn --without-node
-brew install php71
+brew install php71 --with-pear
 brew install composer
 
 echo "Cleaning up..."
