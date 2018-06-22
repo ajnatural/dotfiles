@@ -70,8 +70,8 @@ PACKAGES=(
     mysql
     postgres
     neovim
-		# fln specific
-		lsyncd
+    # fln specific
+    lsyncd
 )
 
 echo "Installing packages..."
@@ -116,7 +116,9 @@ echo "Installing Python2 packages..."
 PYTHON2_PACKAGES=(
     virtualenv
     virtualenvwrapper
+    jedi
     flake8
+
 )
 
 sudo chown -R $(whoami) /Users/ajain/Library/
@@ -127,6 +129,7 @@ sudo -H pip install ${PYTHON2_PACKAGES[@]} --ignore-installed six
 echo "Installing Python3 packages..."
 PYTHON3_PACKAGES=(
     virtualenv
+    jedi
     flake8
 )
 
