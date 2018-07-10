@@ -123,8 +123,8 @@ PYTHON2_PACKAGES=(
 
 sudo chown -R $(whoami) /Users/ajain/Library/
 
-sudo -H easy_install pip
-sudo -H pip install ${PYTHON2_PACKAGES[@]} --ignore-installed six
+easy_install pip
+pip install ${PYTHON2_PACKAGES[@]} --ignore-installed six
 
 echo "Installing Python3 packages..."
 PYTHON3_PACKAGES=(
@@ -133,11 +133,17 @@ PYTHON3_PACKAGES=(
     flake8
 )
 
-sudo -H pip3 install ${PYTHON3_PACKAGES[@]}
+pip3 install ${PYTHON3_PACKAGES[@]}
 
 echo "Installing Ruby gems"
 RUBY_GEMS=(
 )
-# sudo gem install ${RUBY_GEMS[@]}
+# gem install ${RUBY_GEMS[@]}
+
+echo "Installing pecl packages"
+PECL_PACKAGES=(
+    msgpack
+)
+# pecl install ${PECL_PACKAGES[@]}
 
 echo "Bootstrapping complete"

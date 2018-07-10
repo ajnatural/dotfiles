@@ -9,11 +9,6 @@ endif
 
 syntax on
 
-" deoplete
-let g:deoplete#enable_at_startup = 1
-let g:deoplete#ignore_sources = get(g:, 'deoplete#ignore_sources', {})
-let g:deoplete#ignore_sources.php = ['omni']
-
 " Set main configuration directory, and where cache is stored.
 let $VIMPATH = fnamemodify(resolve(expand('<sfile>:p')), ':h:h')
 
@@ -51,6 +46,6 @@ call s:source_file('mappings.vim')
 call s:source_file('fzf.vim')
 call s:source_file('plug.vim')
 call s:source_file('plugins.vim')
-call s:source_file('syntastic.vim')
+call s:source_file('deoplete.vim')
 
 set secure
