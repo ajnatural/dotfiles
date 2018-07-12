@@ -83,7 +83,7 @@ endif
 " }}}
 " Tabs and Indents {{{
 " ----------------
-set textwidth=80    " Text width maximum chars before wrapping
+set textwidth=150    " Text width maximum chars before wrapping
 set expandtab       " Expand tabs to spaces.
 set tabstop=4       " The number of spaces a tab is
 set softtabstop=4   " While performing editing operations
@@ -166,7 +166,7 @@ set cmdheight=2         " Height of the command line
 set cmdwinheight=5      " Command-line lines
 set noequalalways       " Don't resize windows on split or close
 set laststatus=2        " Always show a status line
-set colorcolumn=80      " Highlight the 80th character limit
+set colorcolumn=150      " Highlight the 150th character limit
 set display=lastline
 
 " Do not display completion messages
@@ -236,5 +236,13 @@ endfunction
 " }}}
 
 let g:fzf_layout = { 'window': '-tabnew' }
+
+
+" Close loclist when you close window
+autocmd BufWinEnter quickfix nnoremap <silent> <buffer>
+            \   q :cclose<cr>:lclose<cr>
+autocmd BufEnter * if (winnr('$') == 1 && &buftype ==# 'quickfix' ) |
+            \   bd|
+            \   q | endif
 
 " vim: set foldmethod=marker ts=2 sw=2 tw=80 noet :

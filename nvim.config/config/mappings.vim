@@ -342,5 +342,17 @@ autocmd BufLeave term://* stopinsert
 
 " NERDTree
 map <C-n> :NERDTreeToggle<CR>
+let NERDTreeMapOpenVSplit='<C-v>'
+let NERDTreeMapOpenSplit='<C-x>'
+
+" Tagbar
+nmap <C-t> :TagbarToggle<CR>
+
+" ALE 
+nmap <C-h> :ALEHover<CR>
+nmap <C-g> :ALEGoToDefinition<CR>
+nmap <C-r> :ALEFindReferences<CR>
+nmap <silent> <C-k> <Plug>(ale_previous_wrap)
+nmap <silent> <C-j> <Plug>(ale_next_wrap)
 
 " vim: set foldmethod=marker ts=2 sw=2 tw=80 noet :

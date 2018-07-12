@@ -48,6 +48,7 @@ PACKAGES=(
     findutils
     bash
     ack
+    telnet
     git
     imagemagick
     jq
@@ -111,6 +112,7 @@ FONTS=(
     font-clear-sans
 )
 brew cask install ${FONTS[@]}
+brew install --HEAD universal-ctags/universal-ctags/universal-ctags
 
 echo "Installing Python2 packages..."
 PYTHON2_PACKAGES=(
@@ -118,7 +120,7 @@ PYTHON2_PACKAGES=(
     virtualenvwrapper
     jedi
     flake8
-
+    python-language-server[all]
 )
 
 sudo chown -R $(whoami) /Users/ajain/Library/

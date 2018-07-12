@@ -90,6 +90,8 @@ let g:PHP_removeCRwhenUnix = 0
 " }}}
 " Python {{{
 let g:python_highlight_all = 1
+autocmd bufreadpre *.py setlocal textwidth=80
+autocmd bufreadpre *.py setlocal colorcolumn=80
 
 " }}}
 " Vim {{{
