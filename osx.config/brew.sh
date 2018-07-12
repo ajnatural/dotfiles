@@ -148,4 +148,9 @@ PECL_PACKAGES=(
 )
 # pecl install ${PECL_PACKAGES[@]}
 
+echo "Installing global node packages"
+NPM_PACKAGES=(
+)
+# npm -g install ${NPM_PACKAGES[@]}
+
 echo "Bootstrapping complete"
