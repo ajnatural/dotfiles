@@ -71,6 +71,9 @@ PACKAGES=(
     mysql
     postgres
     neovim
+    bat
+    prettyping
+    htop
     # fln specific
     lsyncd
 )
@@ -79,7 +82,7 @@ echo "Installing packages..."
 brew install ${PACKAGES[@]}
 
 brew install yarn --without-node
-brew install php71 --with-pear
+brew install php72 --with-pear
 brew install composer
 
 echo "Cleaning up..."
@@ -100,6 +103,7 @@ CASKS=(
     ngrok
     alfred
     java
+    kap
 )
 
 echo "Installing cask apps..."
@@ -150,7 +154,10 @@ PECL_PACKAGES=(
 
 echo "Installing global node packages"
 NPM_PACKAGES=(
+    eslint
+    prettier
+    flow-bin
 )
-# npm -g install ${NPM_PACKAGES[@]}
+npm -g install ${NPM_PACKAGES[@]}
 
 echo "Bootstrapping complete"
