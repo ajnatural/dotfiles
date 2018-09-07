@@ -21,4 +21,4 @@ vim +PlugInstall +qall
 
 cd $BASE_DIR
 
-echo "Put 'source $BASE_DIR/bash.config/main.sh' in .zshrc"
+echo "source $BASE_DIR/bash.config/main.sh" > ~/.zshrc

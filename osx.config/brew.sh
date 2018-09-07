@@ -104,6 +104,7 @@ CASKS=(
     alfred
     java
     wireshark
+    kap
 )
 
 echo "Installing cask apps..."

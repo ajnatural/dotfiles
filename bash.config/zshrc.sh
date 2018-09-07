@@ -51,7 +51,7 @@ HIST_STAMPS="dd/mm/yyyy"
 # Add wisely, as too many plugins slow down shell startup.
 BASE_DIR='/Users/ajain/'
 
-export EDITOR=nvr
+export EDITOR=vim
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
@@ -74,7 +74,7 @@ autoload -Uz compinit
 compinit
 # End of lines added by compinstall
 
-export PATH=/usr/local/Cellar/php71/7.1.10_21/bin:$PATH
+export PATH=/usr/local/Cellar/php/7.2.9_2/bin:$PATH
 alias python=python2
 
 export NVM_DIR="$HOME/.nvm"
