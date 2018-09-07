@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>customSites</key>
+	<dict>
+		<key>5C87FE7C-7EDD-4B4E-ACB5-3938F4EFBEAE</key>
+		<dict>
+			<key>enabled</key>
+			<true/>
+			<key>keyword</key>
+			<string>inbox</string>
+			<key>text</key>
+			<string>search inbox for {query}</string>
+			<key>url</key>
+			<string>https://inbox.google.com/search/{query}</string>
+			<key>utf8</key>
+			<true/>
+		</dict>
+		<key>C30A1425-CB2B-4FB6-9831-244FE1D96480</key>
+		<dict>
+			<key>enabled</key>
+			<true/>
+			<key>keyword</key>
+			<string>trello</string>
+			<key>text</key>
+			<string>Open Trello</string>
+			<key>url</key>
+			<string>https://trello.com/</string>
+			<key>utf8</key>
+			<true/>
+		</dict>
+		<key>FED7680B-9FD5-49C4-9D43-BDFA1F47EE21</key>
+		<dict>
+			<key>enabled</key>
+			<true/>
+			<key>keyword</key>
+			<string>inbox</string>
+			<key>text</key>
+			<string>Open Inbox</string>
+			<key>url</key>
+			<string>https://inbox.google.com</string>
+			<key>utf8</key>
+			<true/>
+		</dict>
+	</dict>
+	<key>onlyShowEnabledInPrefs</key>
+	<true/>
+</dict>
+</plist>

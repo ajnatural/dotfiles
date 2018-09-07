@@ -1,0 +1,8 @@
+{
+  "alfredsnippet" : {
+    "snippet" : "mysql -h db-master.syd1.fln-dev.net -u dev -p'!2#4QwErfr33lancer' gaf",
+    "uid" : "5F193125-0DFC-4644-8778-AE6328B11B31",
+    "name" : "flndev-db",
+    "keyword" : ""
+  }
+}

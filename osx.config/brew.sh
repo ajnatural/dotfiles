@@ -103,7 +103,7 @@ CASKS=(
     ngrok
     alfred
     java
-    kap
+    wireshark
 )
 
 echo "Installing cask apps..."

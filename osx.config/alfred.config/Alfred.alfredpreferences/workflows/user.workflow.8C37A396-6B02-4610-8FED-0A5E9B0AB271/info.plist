@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>com.menith.chrometabsearch</string>
+	<key>category</key>
+	<string>Internet</string>
+	<key>connections</key>
+	<dict>
+		<key>C9691B1E-8305-4063-874A-68CF0B67911A</key>
+		<array/>
+	</dict>
+	<key>createdby</key>
+	<string>Anshul Jain</string>
+	<key>description</key>
+	<string>Search open chrome tabs, and jump to selection</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Chrome Tab Search</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>alfredfiltersresults</key>
+				<false/>
+				<key>alfredfiltersresultsmatchmode</key>
+				<integer>0</integer>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>escaping</key>
+				<integer>68</integer>
+				<key>keyword</key>
+				<string>tabs</string>
+				<key>queuedelaycustom</key>
+				<integer>3</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<true/>
+				<key>queuedelaymode</key>
+				<integer>0</integer>
+				<key>queuemode</key>
+				<integer>2</integer>
+				<key>runningsubtext</key>
+				<string></string>
+				<key>script</key>
+				<string>on trimLastChar(theText)
+    if length of theText = 0 then
+        error "Can't trim empty text." number -1728
+    else if length of theText = 1 then
+        return ""
+    else
+        return text 1 thru -3 of theText
+    end if
+end trimLastChar
+
+set res to "{\"items\": ["tell application "Google Chrome"	set window_list to every window # get the windows		repeat with the_window in window_list # for every window		set tab_list to every tab in the_window # get the tabs				repeat with the_tab in tab_list # for every tab						set the_title to the title of the_tab			set the_URL to the URL of the_tab			set window_id to the id of the_tab			set tab_id to the id of the_window						set squote to "'"			set quote to "\""						set sed to " tr -d \\" &amp; squote &amp; "\\" &amp; quote			set the_title to do shell script "echo '" &amp; the_title &amp; "' | " &amp; sed						set res to res &amp; "{\"uid\":\"" &amp; the_title &amp; "\",\"arg\": {\"title\":\"" &amp; the_title &amp; "\"," &amp; "\"tab_id\":" &amp; tab_id &amp; "," &amp; "\"window_id\":" &amp; window_id &amp; "}}," &amp; return		end repeat	end repeatend tellset res to trimLastChar(res)
+set res to res &amp; "]}"
+res</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>subtext</key>
+				<string></string>
+				<key>title</key>
+				<string>Chrome Tab List</string>
+				<key>type</key>
+				<integer>6</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>C9691B1E-8305-4063-874A-68CF0B67911A</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>applescript</key>
+				<string>on alfred_script(q)
+  set window_index to the window_id of q
+  set target_index to the tab_id of q
+
+  tell application "Google Chrome" to set active tab index of first window to target_index
+  tell application "Google Chrome" to activate 
+end alfred_script</string>
+				<key>cachescript</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.applescript</string>
+			<key>uid</key>
+			<string>8D1974EB-BCF4-4920-B7AD-9F882C336B76</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string></string>
+	<key>uidata</key>
+	<dict>
+		<key>8D1974EB-BCF4-4920-B7AD-9F882C336B76</key>
+		<dict>
+			<key>xpos</key>
+			<integer>420</integer>
+			<key>ypos</key>
+			<integer>80</integer>
+		</dict>
+		<key>C9691B1E-8305-4063-874A-68CF0B67911A</key>
+		<dict>
+			<key>xpos</key>
+			<integer>40</integer>
+			<key>ypos</key>
+			<integer>50</integer>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>https://www.menith.com</string>
+</dict>
+</plist>

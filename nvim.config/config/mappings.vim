@@ -348,11 +348,10 @@ let NERDTreeMapOpenSplit='<C-x>'
 " Tagbar
 nmap <C-t> :TagbarToggle<CR>
 
-" ALE 
-nmap <C-h> :ALEHover<CR>
-nmap <C-g> :ALEGoToDefinition<CR>
-nmap <C-r> :ALEFindReferences<CR>
-nmap <silent> <C-k> <Plug>(ale_previous_wrap)
-nmap <silent> <C-j> <Plug>(ale_next_wrap)
+" Language Client
+nnoremap <C-c> :call LanguageClient_contextMenu()<CR>
+" Or map each action separately
+nnoremap <silent> <C-h> :call LanguageClient#textDocument_hover()<CR>
+nnoremap <silent> <C-g> :call LanguageClient#textDocument_definition()<CR>
 
 " vim: set foldmethod=marker ts=2 sw=2 tw=80 noet :

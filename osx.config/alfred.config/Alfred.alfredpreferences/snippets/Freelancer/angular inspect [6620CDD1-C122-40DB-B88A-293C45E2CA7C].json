@@ -1,0 +1,8 @@
+{
+  "alfredsnippet" : {
+    "snippet" : "var a = Object.values(angular.element($0).inheritedData())[0]",
+    "uid" : "6620CDD1-C122-40DB-B88A-293C45E2CA7C",
+    "name" : "angular inspect",
+    "keyword" : ""
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "alfredsnippet" : {
+    "snippet" : "`case when strtol(SUBSTRING(md5(u.user_id || 'ginette' || 'FOT-2548'), 1, 8), 16) :: Float \/ (strtol('ffffffff', 16)) <= 0.5 then 'test'`",
+    "uid" : "8DC930AF-5D5A-42C6-866A-7DE7BA86B7F5",
+    "name" : "sql md5",
+    "keyword" : ""
+  }
+}

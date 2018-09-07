@@ -46,6 +46,7 @@ call s:source_file('mappings.vim')
 call s:source_file('fzf.vim')
 call s:source_file('plug.vim')
 call s:source_file('plugins.vim')
+call s:source_file('language-client.vim')
 call s:source_file('deoplete.vim')
 call s:source_file('ale.vim')
 
