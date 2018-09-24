@@ -74,6 +74,7 @@ PACKAGES=(
     bat
     prettyping
     htop
+    cheat
     # fln specific
     lsyncd
 )
