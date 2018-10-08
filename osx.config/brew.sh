@@ -75,6 +75,7 @@ PACKAGES=(
     prettyping
     htop
     cheat
+    xsv
     # fln specific
     lsyncd
 )
