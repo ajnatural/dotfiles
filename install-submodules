@@ -1,19 +1,25 @@
 #!/bin/bash
-BASE_DIR=$HOME
 
+BASE_DIR=$HOME
 echo "Base DIR: $BASE_DIR"
 
-# Install oh-my-zsh
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+os=`lsb_release -d`;
+if [[ $os =~ .*Ubuntu* ]]
+then
+  os='ubuntu'
+else
+  os='osx'
+fi
+echo "Running $os"
 
-sh ./osx.config/brew.sh
-sh ./osx.config/osx.sh
+for f in "./$os.config/*.sh";
+do
+  bash $f
+done
 
-ln -s $BASE_DIR/vim.config/vim $HOME/.vim
-ln -s $BASE_DIR/tmux.config/tmux.conf $HOME/.tmux.conf
-
+ln -s $BASE_DIR/dotfiles/tmux.config/tmux.conf $BASE_DIR/.tmux.conf
 # Install neovim config
-mkdir $BASE_DIR/.config
+mkdir -p $BASE_DIR/.config
 ln -s $BASE_DIR/dotfiles/nvim.config $BASE_DIR/.config/nvim
 ln -s $BASE_DIR/dotfiles/nvim.config $BASE_DIR/.vim 
 

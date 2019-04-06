@@ -1,4 +1,4 @@
-BASE_DIR='/Users/ajain/dotfiles/bash.config'
+BASE_DIR="$HOME/dotfiles/bash.config"
 
 alias=$BASE_DIR/alias.sh
 zshrc=$BASE_DIR/zshrc.sh
