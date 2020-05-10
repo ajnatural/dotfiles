@@ -64,6 +64,8 @@ PACKAGES=(
     bat
     prettyping
     htop
+    cheat
+    xsv
 )
 
 echo "Installing packages..."
@@ -117,7 +119,7 @@ PYTHON2_PACKAGES=(
     python-language-server[all]
 )
 
-sudo chown -R $(whoami) /Users/ajain/Library/
+sudo chown -R $(whoami) $HOME/Library/
 
 easy_install pip
 pip install ${PYTHON2_PACKAGES[@]} --ignore-installed six
@@ -149,5 +151,8 @@ NPM_PACKAGES=(
     flow-bin
 )
 npm -g install ${NPM_PACKAGES[@]}
+
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+chsh -s /bin/zsh
 
 echo "Bootstrapping complete"
