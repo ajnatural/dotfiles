@@ -7,6 +7,10 @@ echo "Base DIR: $BASE_DIR"
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
 sh ./osx.config/brew.sh
+
+# For HoRNDIS which allows Android USB Tether
+sudo kextload /Library/Extensions/HoRNDIS.kext
+
 sh ./osx.config/osx.sh
 
 ln -s $BASE_DIR/vim.config/vim $HOME/.vim

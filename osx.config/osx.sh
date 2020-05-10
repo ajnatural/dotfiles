@@ -16,8 +16,11 @@ while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 # General UI/UX                                                               #
 ###############################################################################
 
-# Set standby delay to 24 hours (default is 1 hour)
-sudo pmset -a standbydelay 86400
+# Turn network off when asleep
+sudo pmset -b tcpkeepalive 600
+
+# Set standby delay to 1 hour
+sudo pmset -a standbydelay 3600
 
 # Disable the sound effects on boot
 sudo nvram SystemAudioVolume=" "
@@ -117,8 +120,8 @@ defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
 # Show battery percent menu bar
 defaults write com.apple.menuextra.battery ShowPercent YES
 
-# Show 24 hour time in menu bar
-defaults write com.apple.menuextra.clock DateFormat -string 'EEE MMM d  h:mm:ss'
+# Show 12 hour time in menu bar
+defaults write com.apple.menuextra.clock DateFormat -string 'EEE MMM d  hh:mm'
 
 
 ###############################################################################

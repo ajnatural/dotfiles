@@ -12,3 +12,7 @@ git-file-history() {
 		for r in `git rev-list --all -- $1 | head -$2 `; do; git --no-pager show --unified=0 --pretty=fuller $r ; done;
 }
 
+function hs() {
+    ( cd ~/Homestead && vagrant $* )
+}
+
