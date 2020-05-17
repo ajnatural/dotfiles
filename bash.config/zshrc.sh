@@ -56,7 +56,7 @@ export EDITOR=vim
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(jsontools extract npm osx pip python sudo wd virtualenvwrapper yarn gitfast colored-man-pages dotenv urltools rsync)
+plugins=(jsontools extract npm osx pip python sudo wd yarn gitfast colored-man-pages dotenv urltools rsync)
 
 source $ZSH/oh-my-zsh.sh
 

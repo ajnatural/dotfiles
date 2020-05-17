@@ -1,9 +1,5 @@
 " deoplete
 let g:deoplete#enable_at_startup = 1
-let g:deoplete#ignore_sources = get(g:, 'deoplete#ignore_sources', {})
-let g:deoplete#auto_complete_start_length = 0
-
-let g:deoplete#ignore_sources.php = ['omni']
 
 " PHP
 " Include use statement

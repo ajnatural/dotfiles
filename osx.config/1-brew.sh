@@ -26,7 +26,6 @@ brew update
 
 # Install GNU core utilities (those that come with OS X are outdated)
 brew tap homebrew/core
-brew tap homebrew/homebrew-php
 
 PACKAGES=(
     coreutils
@@ -44,7 +43,6 @@ PACKAGES=(
     jq
     mercurial
     python
-    python2
     ripgrep
     tmux
     tree
@@ -58,22 +56,21 @@ PACKAGES=(
     fzf
     pgcli
     mycli
+    neovim
     mysql
     postgres
-    neovim
     bat
+    yarn
     prettyping
     htop
     cheat
+    composer
     xsv
 )
 
 echo "Installing packages..."
 brew install ${PACKAGES[@]}
 
-brew install yarn --without-node
-brew install php74 --with-pear
-brew install composer
 
 echo "Cleaning up..."
 brew cleanup
@@ -85,6 +82,7 @@ CASKS=(
     firefox
     flux
     google-chrome
+    ticktick
     iterm2
     spectacle
     vlc
@@ -96,13 +94,21 @@ CASKS=(
     virtualbox
     wireshark
     kap
+    skype
+    phpstorm
+    figma
+    notion
+    slack
+    vagrant
+    vagrant-manager
+    php@7.4
 )
 
 echo "Installing cask apps..."
 brew cask install ${CASKS[@]}
 
 echo "Installing fonts..."
-brew tap caskroom/fonts
+brew tap homebrew/cask-fonts
 FONTS=(
     font-roboto
     font-clear-sans
@@ -110,39 +116,17 @@ FONTS=(
 brew cask install ${FONTS[@]}
 brew install --HEAD universal-ctags/universal-ctags/universal-ctags
 
-echo "Installing Python2 packages..."
-PYTHON2_PACKAGES=(
-    virtualenv
-    virtualenvwrapper
-    jedi
-    flake8
-    python-language-server[all]
-)
-
-sudo chown -R $(whoami) $HOME/Library/
-
-easy_install pip
-pip install ${PYTHON2_PACKAGES[@]} --ignore-installed six
+sudo chown -R $(whoami) $HOME/Library/Python
 
 echo "Installing Python3 packages..."
 PYTHON3_PACKAGES=(
     virtualenv
     jedi
     flake8
+    neovim
 )
 
 pip3 install ${PYTHON3_PACKAGES[@]}
-
-echo "Installing Ruby gems"
-RUBY_GEMS=(
-)
-# gem install ${RUBY_GEMS[@]}
-
-echo "Installing pecl packages"
-PECL_PACKAGES=(
-    msgpack
-)
-# pecl install ${PECL_PACKAGES[@]}
 
 echo "Installing global node packages"
 NPM_PACKAGES=(
